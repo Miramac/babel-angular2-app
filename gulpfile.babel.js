@@ -10,8 +10,11 @@ import babelify from 'babelify';
 import del from 'del';
 
 gulp.task('copy', () => {
-  return gulp.src('src/index.html')
-    .pipe(gulp.dest('public'));
+    gulp.src('src/index.html')
+    .pipe(gulp.dest('public'))
+    gulp.src('src/views/*.html')
+    .pipe(gulp.dest('public/views'))
+    ;
 });
 
 gulp.task('build', ['copy'], () => {
