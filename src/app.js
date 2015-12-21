@@ -14,43 +14,7 @@ import {
 } from 'angular2/router';
 
 import { Greeter } from './services';
-
-@Component({
-  selector: 'hello'
-})
-@View({
-  template: '<p>{{ message }}</p>'
-})
-class Hello {
-  constructor(greeter: Greeter) {
-    this.message = greeter.say('hello', 'Angular 2');
-  }
-}
-
-@Component({
-  selector: 'ciao'
-})
-@View({
-  template: '<p>{{ message }}</p>'
-})
-class Ciao {
-  constructor(greeter: Greeter, routeParams: RouteParams) {
-    this.message = greeter.say('ciao', routeParams.get('name'));
-  }
-}
-
-@Component({
-  selector: 'linker'
-})
-@View({
-  template: '<p><a [href]="url" [title]="name">{{ name }}</a></p>'
-})
-class Linker {
-  constructor(greeter: Greeter, @Attribute('name') name, @Attribute('url') url) {
-    this.name = name;
-    this.url = url;
-  }
-}
+import { Hello, Ciao, Linker } from './components';
 
 @Component({
   selector: 'hello-app',
